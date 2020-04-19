@@ -1,7 +1,7 @@
 package kg.todoapp.model;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.NotBlank;
 import java.util.Set;
 
 @Entity
@@ -10,11 +10,15 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @NotBlank(message = "Project's description must be not empty")
     private String description;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "project")
-    private List<TaskGroup> taskGroups;
+
+    @OneToMany(mappedBy = "project")
+    private Set<TaskGroup> taskGroups;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "project")
     private Set<ProjectStep> projectSteps;
+
+
     public Project() {
     }
 
@@ -32,5 +36,21 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<TaskGroup> getTaskGroups() {
+        return taskGroups;
+    }
+
+    public void setTaskGroups(Set<TaskGroup> taskGroups) {
+        this.taskGroups = taskGroups;
+    }
+
+    public Set<ProjectStep> getProjectSteps() {
+        return projectSteps;
+    }
+
+    public void setProjectSteps(Set<ProjectStep> projectSteps) {
+        this.projectSteps = projectSteps;
     }
 }

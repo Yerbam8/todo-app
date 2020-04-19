@@ -14,7 +14,7 @@ public interface SqlTaskGroupRepository extends JpaRepository<TaskGroup,Integer>
     @Override
     @Query("from TaskGroup g join fetch g.tasks ")
     List<TaskGroup> findAll();
-
-    List<TaskGroup> findAllByDoneFalseOrderByProject();
+    @Override
+    boolean existsByDoneIsFalseAndProject_Id(Integer projectId);
 
 }

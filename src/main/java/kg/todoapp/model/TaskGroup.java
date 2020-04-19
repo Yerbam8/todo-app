@@ -14,7 +14,6 @@ public class TaskGroup {
     private boolean done;
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "taskGroup")
     private Set<Task> tasks;
-
     @ManyToOne
     @JoinColumn(name = "project_id")
     private Project project;

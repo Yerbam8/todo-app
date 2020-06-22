@@ -1,4 +1,6 @@
-package kg.todoapp.model;
+package kg.todoapp.project;
+
+import kg.todoapp.model.Project;
 
 import java.util.List;
 import java.util.Optional;

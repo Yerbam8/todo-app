@@ -9,6 +9,7 @@ public class Task  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String description;
     private boolean done;
     private LocalDateTime deadline;
@@ -20,12 +21,15 @@ public class Task  {
 
 
     public Task() {
+
     }
 
-    public Task(String description, boolean done) {
-        this.description = description;
-        this.done = done;
+    public Task(String description, LocalDateTime deadline){
+        this.description=description;
+        this.deadline=deadline;
+
     }
+
 
     public int getId() {
         return id;

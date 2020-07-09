@@ -1,7 +1,7 @@
 package kg.todoapp.adapter;
 
 import kg.todoapp.model.Project;
-import kg.todoapp.project.ProjectRepository;
+import kg.todoapp.logic.ProjectRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

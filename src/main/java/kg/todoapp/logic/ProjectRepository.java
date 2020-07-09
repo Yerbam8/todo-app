@@ -1,4 +1,4 @@
-package kg.todoapp.project;
+package kg.todoapp.logic;
 
 import kg.todoapp.model.Project;
 
